@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="COP4870.ECommerce.UI.MAUI.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:COP4870.ECommerce.UI.MAUI"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="Main"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="main" />
+
+    <ShellContent
+        Title="Inventory"
+        ContentTemplate="{DataTemplate local:InventoryPage}"
+        Route="inventory" />
+
+    <ShellContent
+        Title="Shopping Cart"
+        ContentTemplate="{DataTemplate local:ShoppingCartPage}"
+        Route="cart" />
+
+    <ShellContent
+        Title="Checkout"
+        ContentTemplate="{DataTemplate local:CheckoutPage}"
+        Route="checkout" />
+
+</Shell>

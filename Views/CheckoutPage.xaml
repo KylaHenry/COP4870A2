@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="COP4870.ECommerce.UI.MAUI.CheckoutPage"
+             Title="Checkout">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <Label Text="Receipt" FontSize="24" HorizontalOptions="Center" />
+
+        <Frame BorderColor="Gray" Padding="15">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Thank you for your purchase!" FontAttributes="Bold" HorizontalOptions="Center" />
+                <Label x:Name="DateTimeLabel" HorizontalOptions="Center" />
+
+                <Line X1="0" X2="300" Stroke="Gray" StrokeThickness="1" Margin="0,10" />
+
+                <Grid ColumnDefinitions="*, Auto, Auto, Auto" RowSpacing="5">
+                    <Label Grid.Row="0" Grid.Column="0" Text="Item" FontAttributes="Bold" />
+                    <Label Grid.Row="0" Grid.Column="1" Text="Qty" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label Grid.Row="0" Grid.Column="2" Text="Price" FontAttributes="Bold" HorizontalOptions="End" />
+                    <Label Grid.Row="0" Grid.Column="3" Text="Total" FontAttributes="Bold" HorizontalOptions="End" />
+                </Grid>
+
+                <Line X1="0" X2="300" Stroke="Gray" StrokeThickness="1" Margin="0,5" />
+
+                <VerticalStackLayout x:Name="ReceiptItemsLayout" Spacing="5">
+                    <!-- Receipt items will be added here dynamically -->
+                </VerticalStackLayout>
+
+                <Line X1="0" X2="300" Stroke="Gray" StrokeThickness="1" Margin="0,10" />
+
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto, Auto" RowSpacing="5">
+                    <Label Grid.Row="0" Grid.Column="0" Text="Subtotal:" HorizontalOptions="End" />
+                    <Label Grid.Row="0" Grid.Column="1" x:Name="SubtotalLabel" HorizontalOptions="End" />
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="Tax (7%):" HorizontalOptions="End" />
+                    <Label Grid.Row="1" Grid.Column="1" x:Name="TaxLabel" HorizontalOptions="End" />
+
+                    <Label Grid.Row="2" Grid.Column="0" Text="Total:" FontAttributes="Bold" HorizontalOptions="End" />
+                    <Label Grid.Row="2" Grid.Column="1" x:Name="TotalLabel" FontAttributes="Bold" HorizontalOptions="End" />
+                </Grid>
+            </VerticalStackLayout>
+        </Frame>
+
+        <Button Text="Back to Main Menu" Clicked="OnMainMenuClicked" HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="COP4870.ECommerce.UI.MAUI.ShoppingCartPage"
+             Title="Shopping Cart">
+
+    <Grid RowDefinitions="*, Auto" Padding="10">
+        <ListView Grid.Row="0" x:Name="CartItemsListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10" ColumnDefinitions="*, Auto, Auto, Auto, Auto">
+                            <Label Grid.Column="0" Text="{Binding Product.Name}" VerticalOptions="Center" />
+                            <Label Grid.Column="1" Text="{Binding Product.Price, StringFormat='${0:F2}'}" VerticalOptions="Center" Margin="10,0" />
+                            <StackLayout Grid.Column="2" Orientation="Horizontal" Spacing="5">
+                                <Button Text="-" CommandParameter="{Binding Product.Id}" Clicked="OnDecreaseQuantityClicked" />
+                                <Label Text="{Binding Quantity}" VerticalOptions="Center" HorizontalOptions="Center" MinimumWidthRequest="40" HorizontalTextAlignment="Center" />
+                                <Button Text="+" CommandParameter="{Binding Product.Id}" Clicked="OnIncreaseQuantityClicked" />
+                            </StackLayout>
+                            <Label Grid.Column="3" Text="{Binding LineTotal, StringFormat='${0:F2}'}" VerticalOptions="Center" Margin="10,0" />
+                            <Button Grid.Column="4" Text="Remove" CommandParameter="{Binding Product.Id}" Clicked="OnRemoveFromCartClicked" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <StackLayout Grid.Row="1" Spacing="10">
+            <Label x:Name="SubtotalLabel" HorizontalOptions="End" Margin="0,5" />
+            <Label x:Name="TaxLabel" HorizontalOptions="End" Margin="0,5" />
+            <Label x:Name="TotalLabel" FontAttributes="Bold" HorizontalOptions="End" Margin="0,5" />
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
+                <Button Text="Continue Shopping" Clicked="OnContinueShoppingClicked" />
+                <Button Text="Checkout" Clicked="OnCheckoutClicked" />
+            </HorizontalStackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>

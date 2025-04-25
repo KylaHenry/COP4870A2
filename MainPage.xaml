@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="COP4870.ECommerce.UI.MAUI.MainPage"
+             Title="E-Commerce Platform">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30">
+
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="100"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="E-Commerce Platform"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="InventoryBtn"
+                Text="Manage Inventory"
+                SemanticProperties.Hint="Navigate to inventory management"
+                Clicked="OnInventoryClicked"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="CartBtn"
+                Text="Shopping Cart"
+                SemanticProperties.Hint="Navigate to shopping cart"
+                Clicked="OnCartClicked"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="CheckoutBtn"
+                Text="Checkout"
+                SemanticProperties.Hint="Proceed to checkout"
+                Clicked="OnCheckoutClicked"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

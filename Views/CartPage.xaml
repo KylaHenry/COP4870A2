@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcommerceApp.Views.CartPage"
+             Title="Shopping Cart">
+    <VerticalStackLayout Padding="10">
+        <CollectionView x:Name="CartList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout>
+                        <Label Text="{Binding Name}" WidthRequest="120"/>
+                        <Label Text="{Binding Quantity}" WidthRequest="60"/>
+                        <Label Text="{Binding Price}" WidthRequest="80"/>
+                        <Button Text="Remove" Clicked="OnRemoveClicked"/>
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Checkout" Clicked="OnCheckoutClicked"/>
+    </VerticalStackLayout>
+</ContentPage>
